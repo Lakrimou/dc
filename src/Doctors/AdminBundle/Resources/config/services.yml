@@ -1,0 +1,8 @@
+services:
+    doctorsAdmin.form.profile:
+            class: Doctors\AdminBundle\Form\ChangePasswordFormType
+            tags:
+                - { name: form.type, alias: doctorsAdmin_user_changePasswordFormType }
+#    doctors_admin.example:
+#        class: Doctors\AdminBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

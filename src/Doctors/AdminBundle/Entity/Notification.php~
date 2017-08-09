@@ -1,0 +1,194 @@
+<?php
+
+namespace Doctors\AdminBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Notification
+ *
+ * @ORM\Table(name="notification")
+ * @ORM\Entity(repositoryClass="Doctors\AdminBundle\Repository\NotificationRepository")
+ */
+class Notification
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="message", type="text", nullable=true)
+     */
+    private $message;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=255, nullable=true)
+     */
+    private $type;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime", nullable=true)
+     */
+    private $date;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="seen", type="boolean", nullable=true)
+     */
+    private $seen;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="isDoctor", type="boolean", nullable=true)
+     */
+    private $isDoctor;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Doctors\AdminBundle\Entity\Appointment")
+     */
+    private $appointment;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set message
+     *
+     * @param string $message
+     *
+     * @return Notification
+     */
+    public function setMessage($message)
+    {
+        $this->message = $message;
+    
+        return $this;
+    }
+
+    /**
+     * Get message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     *
+     * @return Notification
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Notification
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set seen
+     *
+     * @param boolean $seen
+     *
+     * @return Notification
+     */
+    public function setSeen($seen)
+    {
+        $this->seen = $seen;
+    
+        return $this;
+    }
+
+    /**
+     * Get seen
+     *
+     * @return boolean
+     */
+    public function getSeen()
+    {
+        return $this->seen;
+    }
+
+    /**
+     * Set isDoctor
+     *
+     * @param boolean $isDoctor
+     *
+     * @return Notification
+     */
+    public function setIsDoctor($isDoctor)
+    {
+        $this->isDoctor = $isDoctor;
+    
+        return $this;
+    }
+
+    /**
+     * Get isDoctor
+     *
+     * @return boolean
+     */
+    public function getIsDoctor()
+    {
+        return $this->isDoctor;
+    }
+}
+

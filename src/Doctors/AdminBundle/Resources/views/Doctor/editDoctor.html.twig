@@ -1,0 +1,267 @@
+{% extends "::layoutAdmin.html.twig" %}
+{% block body %}
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title arabe"> تعديل بيانات الطبيب</h4></div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <div class="white-box">
+                    {#{{ form_start(edit_form) }}#}
+                    <a href="#" id="show-{{ doctor.id }}" data-toggle="modal"
+                       data-target="#show-modal-{{ doctor.id }}">
+                        <img src="{{ asset('uploads/doctors/'~ doctor.photoDoctor) }}" alt="picture of doctor"
+                             style="width: 150px; height: 200px;" class="doctorPic thumbnail">
+                    </a>
+                    <div class="modal fade" id="show-modal-{{ doctor.id }}" tabindex="-1"
+                         role="dialog" aria-labelledby="myModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <button type="button" class="close"
+                                            data-dismiss="modal" aria-hidden="true">
+                                        &times;
+                                    </button>
+                                    <h4 class="modal-title arabe" id="myModalLabel"> اظهار
+                                        الصورة</h4>
+                                </div>
+
+                                <div class="modal-body">
+                                    <center>
+                                        <img id="doctorPic" src="{{ asset('uploads/doctors/'~doctor.photoDoctor) }}"
+                                             width="500" height="500" id="large-img-{{ doctor.id }}"
+                                             class="photoDoctor">
+                                    </center>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <div class="row">
+
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            {#<button type="button" id="mybutton" class="updatePhotoDoctor btn btn-default arabe">تعديل</button>#}
+                                            {{ form_start(editPicForm, {"attr":{"id":"akrem"}}) }}
+                                            <div class="form-group">
+                                                {#Génération du label. #}
+                                                {{ form_label(editPicForm.photoDoctor, "صورة الطبيب", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                                                {#Affichage des erreurs pour ce champ précis.#}
+                                                {{ form_errors(editPicForm.photoDoctor) }}
+                                                {#Génération de l'input.#}
+                                                {{ form_widget(editPicForm.photoDoctor, {'attr': {'class': 'arabe'}}) }}
+                                            </div>
+                                            {#<div class="form-group">
+                                                 Génération du label.
+                                                {{ form_label(editPicForm.password, "كلمة المرور", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                                                 Affichage des erreurs pour ce champ précis.
+                                                {{ form_errors(editPicForm.passwordDoctor) }}
+                                                 Génération de l'input.
+                                                {{ form_widget(editPicForm.passwordDoctor, {'attr': {'class': 'arabe'}}) }}
+                                            </div>#}
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                                     role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                                                     aria-valuemax="100" style="width: 100%"></div>
+                                            </div>
+                                            <input type="submit" value="تعديل"/>
+                                            {{ form_end(editPicForm) }}
+
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <button type="button" class="btn btn-default arabe"
+                                                    data-dismiss="modal" style="float: left; margin-top: 69px;"> رجوع
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ form_start(edit_form) }}
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.nameDoctor, "اسم الطبيب", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.nameDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.nameDoctor, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.nationality, "الجنسية", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.nationality) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.nationality, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.phoneNumberDoctor, "رقم الجوال", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.phoneNumberDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.phoneNumberDoctor, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.speciality, "الاختصاص", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.speciality) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.speciality, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.countryDoctor, "البلد", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.countryDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.countryDoctor, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.townDoctor, "المدينة", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.townDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.townDoctor, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.cityDoctor, "الحي", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.cityDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.cityDoctor, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.workplace, "مكان العمل", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.workplace) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.workplace, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.workplaceName, "اسم جهة العمل", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.workplaceName) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.workplaceName, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.startTimeWork, " بداية الدوام", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.startTimeWork) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.startTimeWork, {'attr': {'class': 'arabe'}}) }}
+                    </div><div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.endTimeWork, "نهاية الدوام", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.endTimeWork) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.endTimeWork, {'attr': {'class': 'arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.emailDoctor, "الايميل", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.emailDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.emailDoctor, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}{#
+                        {{ form_label(form.password, "كلمة المرور", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        #}{# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.passwordDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.passwordDoctor, {'attr': {'class': 'arabe'}}) }}
+                    </div>
+                    <input type="submit" value="تعديل بيانات الطبيب" class="btn btn-primary btn-lg arabe"/>
+                    {{ form_end(edit_form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('datatable/js/jquery.metisMenu.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery.blockUI.js') }}"></script>
+
+    <!--Functions Js-->
+    <script src="{{ asset('datatable/js/functions.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/loader.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/jszip.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/pdfmake.min.js') }}"></script>
+    {#<script src="{{ asset('datatable/js/vfs_fonts.js') }}"></script>#}
+    <script src="{{ asset('datatable/js/buttons.html5.js') }}"></script>
+    <script src="{{ asset('datatable/js/buttons.colVis.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables-script.js') }}"></script>
+    <script src="{{ asset('plugins/bower_components/bootstrap-rtl-master/dist/js/bootstrap-rtl.min.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('.progress').hide();
+            $('#akrem').on("submit", function (event) {
+                event.preventDefault();
+                $('.progress').show();
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ path('doctors_admin_editPhotoDoctor', {'id':doctor.id}) }}",
+                    data: new FormData($(this)[0]),
+                    dataType: 'json',
+                    processData: false,
+                    cache: false,
+                    contentType: false,
+                    success: function (response) {
+                        console.log(response.photo);
+                        $('#doctorPic').attr('src', '{{ asset('uploads/doctors/') }}' + response.photo);
+                        $('.doctorPic').attr('src', '{{ asset('uploads/doctors/') }}' + response.photo);
+                        /*alert(response.message);
+                         console.log(response);*/
+                        $('.progress').hide();
+                    },
+                    error: function (response, desc, err) {
+                        if (response.responseJSON && response.responseJSON.message) {
+                            alert(response.responseJSON.message);
+                        }
+                        else {
+                            alert(desc);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

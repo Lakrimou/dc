@@ -1,0 +1,4 @@
+services:
+#    doctors_endpoint.example:
+#        class: Doctors\EndpointBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

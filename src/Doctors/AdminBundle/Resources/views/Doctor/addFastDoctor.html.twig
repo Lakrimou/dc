@@ -1,0 +1,43 @@
+{% extends "::layoutAdmin.html.twig" %}
+{% block body %}
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title arabe"> اضافة طبيب</h4>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <div class="white-box">
+                    {{ form_start(form) }}
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.phoneNumberDoctor, "رقم الجوال", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.phoneNumberDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.phoneNumberDoctor, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}{#
+                        {{ form_label(form.password, "كلمة المرور", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        #}{# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.passwordDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.passwordDoctor, {'attr': {'class': 'arabe'}}) }}
+                    </div>
+                    <div>
+                        <input type="submit" value="اضافة الطبيب" class="btn btn-primary btn-lg arabe"/>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

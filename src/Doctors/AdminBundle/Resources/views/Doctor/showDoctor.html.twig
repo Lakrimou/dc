@@ -1,0 +1,312 @@
+{% extends "::layoutAdmin.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    {#<link rel="stylesheet" href="{{ asset('bootstrap/dist/css/bootstrap.min.css') }}">#}
+    <!-- Integral core stylesheet -->
+    {#<link href="{{ asset('datatable/integral-core.css') }}" rel="stylesheet">#}
+    <!-- /integral core stylesheet -->
+
+    <!--Jvector Map-->
+    {#<link href="{{ asset('datatable/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet">#}
+
+    {#<link href="{{ asset('datatable/integral-forms.css') }}" rel="stylesheet">#}
+
+    <!-- Bootstrap RTL stylesheet min version -->
+    {# <link href="{{ asset('datatable/bootstrap-rtl.min.css') }}" rel="stylesheet">#}
+    <!-- /bootstrap rtl stylesheet min version -->
+
+    <!-- Integral RTL core stylesheet -->
+    {#<link href="{{ asset('datatable/integral-rtl-core.css') }}" rel="stylesheet">#}
+
+    {#<link href="{{ asset('datatable/integral-forms.css') }}" rel="stylesheet">#}
+    <link href="{{ asset('datatable/jquery.dataTables.css') }}" rel="stylesheet">
+    <link href="{{ asset('datatable/buttons.dataTables.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('datatable/select2.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('datatable/bootstrap-toggle.min.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <!-- /main header -->
+
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title arabe">المعلومات التي تخص الطبيب "<strong>{{ doctor.nameDoctor }}</strong>"</h4>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading clearfix">
+                            <h4 class="panel-title arabe">عرض المعلومات</h4>
+                        </div>
+
+
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2">
+                                                <strong class="arabe">اسم الطبيب </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">
+                                                {{ doctor.nameDoctor }}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong>رقم التواصل  </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">
+                                                {{ doctor.phoneNumberDoctor }}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong>تاريخ الاضافة  </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">
+                                                {{ doctor.createdAtDoctor|date('d/m/Y') }}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong>الاختصاص </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">
+                                                {% if  doctor.speciality.nameSpeciality is not defined  %}
+                                                    طبيب عام
+                                                {% else %}
+                                                    {{ doctor.speciality.nameSpeciality }}
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong>الجنسية </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">
+                                                {{ doctor.nationality }}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong>البلد </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">
+                                                {{ doctor.countryDoctor }}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong>المدينة </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">
+                                                {{ doctor.townDoctor }}
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong>الحي </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">
+                                                {{ doctor.cityDoctor }}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong>مكان العمل </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">
+                                                {{ doctor.workplace }}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong>اسم جهة العمل </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">
+                                                {{ doctor.workplaceName }}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong>بداية الدوام </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">
+                                                على الساعة{{ doctor.startTimeWork|date('H') }}  و
+                                                {{ doctor.startTimeWork|date('i') }}  دقيقة
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong>نهاية الدوام </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">
+                                                على الساعة{{ doctor.endTimeWork|date('H') }} و
+                                                {{ doctor.endTimeWork|date('i') }}    دقيقة
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong>الايميل </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">
+                                                {{ doctor.emailDoctor }}
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong class="arabe">الصورة</strong>
+                                            </div>
+                                            <div class="col-lg-10">
+                                                <div class="row">
+
+
+                                                    <div class="col-lg-3">
+                                                        <a href="#" id="show-{{ doctor.id }}" data-toggle="modal"
+                                                           data-target="#show-modal-{{ doctor.id }}">
+
+                                                            <img src="{{ asset('uploads/doctors/'~doctor.photoDoctor) }}"
+                                                                 width="180" height="150" id="small-img-{{ doctor.id }}" class="thumbnail">
+
+                                                        </a>
+
+                                                    </div>
+
+
+                                                    <div class="modal fade" id="show-modal-{{ doctor.id }}" tabindex="-1"
+                                                         role="dialog" aria-labelledby="myModalLabel"
+                                                         aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close"
+                                                                            data-dismiss="modal" aria-hidden="true">
+                                                                        &times;
+                                                                    </button>
+                                                                    <h4 class="modal-title arabe" id="myModalLabel"> اظهار
+                                                                        الصورة</h4>
+                                                                </div>
+
+                                                                <div class="modal-body">
+                                                                    <center>
+                                                                        <img src="{{ asset('uploads/doctors/'~doctor.photoDoctor) }}"
+                                                                             width="500" height="300" id="large-img-7">
+                                                                    </center>
+                                                                </div>
+
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default arabe"
+                                                                            data-dismiss="modal"> رجوع
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe"><strong> قائمة المواعيد  </strong></div>
+                                            <div class="col-lg-10">
+                                                {% for appointment in appointments %}
+                                                    يوم
+                                                    {{ appointment.appointment|date('d-m-Y') }} على الساعة {{ appointment.appointment|date('H') }} و {{ appointment.appointment|date('i')  }}  دقيقة
+| <strong>حالة الموعد</strong> : {{ appointment.status }}                                                    <br>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {#<li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong> الكود الذي تم ارساله على الجوال </strong>
+                                            </div>
+                                            <div class="col-lg-10">
+                                                {{ doctor.codeD }}
+                                            </div>
+                                        </div>
+                                    </li>#}
+
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- /main content -->
+        {#{% block footer %}
+            {{ parent() }}
+        {% endblock %}#}
+    </div>
+    <!-- /page-wrapper -->
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('datatable/js/jquery.metisMenu.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery.blockUI.js') }}"></script>
+
+    <!--Functions Js-->
+    <script src="{{ asset('datatable/js/functions.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/loader.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/jszip.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/pdfmake.min.js') }}"></script>
+    {#<script src="{{ asset('datatable/js/vfs_fonts.js') }}"></script>#}
+    <script src="{{ asset('datatable/js/buttons.html5.js') }}"></script>
+    <script src="{{ asset('datatable/js/buttons.colVis.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables-script.js') }}"></script>
+    <script src="{{ asset('plugins/bower_components/bootstrap-rtl-master/dist/js/bootstrap-rtl.min.js') }}"></script>
+{% endblock %}

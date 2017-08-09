@@ -1,0 +1,197 @@
+{% extends "::layoutAdmin.html.twig" %}
+{% block body %}
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title arabe"> اضافة طبيب</h4></div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <div class="white-box">
+                    {{ form_start(form) }}
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.nameDoctor, "اسم الطبيب", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.nameDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.nameDoctor, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.nationality, "الجنسية", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.nationality) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.nationality, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.phoneNumberDoctor, "رقم الجوال", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.phoneNumberDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.phoneNumberDoctor, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.speciality, "الاختصاص", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.speciality) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.speciality, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.countryDoctor, "البلد", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.countryDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.countryDoctor, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.townDoctor, "المدينة", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.townDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.townDoctor, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.cityDoctor, "الحي", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.cityDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.cityDoctor, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.workplace, "مكان العمل", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.workplace) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.workplace, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.workplaceName, "اسم جهة العمل", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.workplaceName) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.workplaceName, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.startTimeWork, "بداية الدوام", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.startTimeWork) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.startTimeWork, {'attr': {'class': 'arabe'}}) }}
+                    </div><div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.endTimeWork, "نهاية الدوام", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.endTimeWork) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.endTimeWork, {'attr': {'class': 'arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.emailDoctor, "الايميل", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.emailDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.emailDoctor, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}{#
+                        {{ form_label(form.password, "كلمة المرور", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        #}{# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.passwordDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.passwordDoctor, {'attr': {'class': 'arabe'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.photoDoctor, "صورة الطبيب", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(form.photoDoctor) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.photoDoctor, {'attr': {'class': 'arabe'}}) }}
+                    </div>
+                    <input type="submit" value="اضافة الطبيب" class="btn btn-primary btn-lg arabe" />
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('datatable/js/jquery.metisMenu.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery.blockUI.js') }}"></script>
+
+    <!--Functions Js-->
+    <script src="{{ asset('datatable/js/functions.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/loader.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/jszip.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/pdfmake.min.js') }}"></script>
+    {#<script src="{{ asset('datatable/js/vfs_fonts.js') }}"></script>#}
+    <script src="{{ asset('datatable/js/buttons.html5.js') }}"></script>
+    <script src="{{ asset('datatable/js/buttons.colVis.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables-script.js') }}"></script>
+    <script src="{{ asset('plugins/bower_components/bootstrap-rtl-master/dist/js/bootstrap-rtl.min.js') }}"></script>
+    <script>
+        /*var nbreOptions = $('#doctors_adminbundle_doctor_startTimeWork_minute option').size();
+        console.log(nbreOptions);*/
+        $("#doctors_adminbundle_doctor_startTimeWork_minute option").each(function() {
+            var value = $(this).val();
+            var text = $(this).text();
+            if (value != 0 && value != 30)
+            {
+                $(this).attr('disabled','disabled');
+                $(this).css('background-color','red');
+                $(this).hide();
+                $(this).css('color','white');
+            }
+
+        });
+        /* doctors_adminbundle_doctor_endTimeWork_minute */
+        $("#doctors_adminbundle_doctor_endTimeWork_minute option").each(function() {
+            var value = $(this).val();
+            var text = $(this).text();
+            if (value != 0 && value != 30)
+            {
+                $(this).attr('disabled','disabled');
+                $(this).css('background-color','red');
+                $(this).hide();
+                $(this).css('color','white');
+            }
+
+        });
+    </script>
+{% endblock %}

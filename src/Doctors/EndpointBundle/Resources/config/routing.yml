@@ -1,0 +1,35 @@
+homepage:
+    path:     /
+    defaults: { _controller: "DoctorsEndpointBundle:Default:index" }
+            
+endpoint_user:
+    resource: "@DoctorsEndpointBundle/Resources/config/routing/user.yml"
+    prefix:   /
+
+endpoint_doctor:
+    resource: "@DoctorsEndpointBundle/Resources/config/routing/doctor.yml"
+    prefix:   /
+
+endpoint_appointment:
+    resource: "@DoctorsEndpointBundle/Resources/config/routing/appointment.yml"
+    prefix:   /
+
+endpoint_evaluation:
+    resource: "@DoctorsEndpointBundle/Resources/config/routing/evaluation.yml"
+    prefix:   /
+
+endpoint_speciality:
+    resource: "@DoctorsEndpointBundle/Resources/config/routing/speciality.yml"
+    prefix:   /
+
+endpoint_newsletter:
+    resource: "@DoctorsEndpointBundle/Resources/config/routing/email.yml"
+    prefix:   /
+      
+endpoint_contact:
+    path:  /contact
+    defaults: { _controller: "DoctorsEndpointBundle:Default:contact" } 
+    methods:  [GET, POST]
+    
+    
+

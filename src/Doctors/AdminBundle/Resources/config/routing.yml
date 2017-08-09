@@ -1,0 +1,182 @@
+
+doctors_admin_homepage:
+    path:     /
+    defaults: { _controller: DoctorsAdminBundle:Admin:index }
+#---------------------------------------------------------------------------
+
+
+
+#Start Routes of doctors---------------------------------------------------------------------------
+
+
+doctors_admin_doctors:
+    path:     /doctors
+    defaults: { _controller: DoctorsAdminBundle:Doctor:doctors }
+
+doctors_admin_showDoctor:
+    path:     /showDoctor/{id}
+    defaults: { _controller: DoctorsAdminBundle:Doctor:showDoctor }
+    requirements:
+
+
+bonjou:
+    path:    /akrem/{id}
+    defaults: { _controller: DoctorsAdminBundle:Doctor:akrem }
+
+doctors_admin_addDoctors:
+    path:     /addDoctor
+    defaults: { _controller: DoctorsAdminBundle:Doctor:addDoctor }
+
+doctors_admin_editDoctor:
+    path:     /editDoctor/{id}
+    defaults: { _controller: DoctorsAdminBundle:Doctor:editDoctor }
+    requirements:
+    
+doctor_admin_addFastDoctor:
+    path:    /addFastDoctor
+    defaults: { _controller: DoctorsAdminBundle:Doctor:addFastDoctor }
+
+doctors_admin_editPhotoDoctor:
+    path:     /editPhotoDoctor/{id}
+    defaults: { _controller: DoctorsAdminBundle:Doctor:editPhotoDoctor }
+    requirements:
+
+
+doctors_admin_deleteDoctor:
+    path:     /deleteDoctor/{id}
+    defaults: { _controller: DoctorsAdminBundle:Doctor:deleteDoctor }
+    requirements:
+
+
+#END Routes of doctors------------------------------------------------------------------------------
+
+
+
+#Start Routes of users---------------------------------------------------------------------------
+doctors_admin_users:
+    path:     /users
+    defaults: { _controller: DoctorsAdminBundle:User:users }
+
+doctors_admin_showUser:
+    path:     /showUser/{id}
+    defaults: { _controller: DoctorsAdminBundle:User:showUser }
+
+
+doctors_admin_addusers:
+    path:     /addUser
+    defaults: { _controller: DoctorsAdminBundle:User:addUser }
+
+doctors_admin_editUser:
+    path:     /editUser/{id}
+    defaults: { _controller: DoctorsAdminBundle:User:editUser }
+
+
+doctors_admin_editPhotoUser:
+    path:     /editPhotoUser/{id}
+    defaults: { _controller: DoctorsAdminBundle:User:editPhotoUser }
+
+
+doctors_admin_deleteUser:
+    path:     /deleteUser/{id}
+    defaults: { _controller: DoctorsAdminBundle:User:deleteUser }
+
+#End Routes of users---------------------------------------------------------------------------
+
+
+
+#Start Routes of evaluation---------------------------------------------------------------------------
+doctors_admin_addEvaluation:
+    path:     /addEvaluation
+    defaults: { _controller: DoctorsAdminBundle:Evaluation:addEvaluation }
+
+doctors_admin_showEvaluation:
+    path:     /showEvaluation/{id}
+    defaults: { _controller: DoctorsAdminBundle:Evaluation:showEvaluation }
+
+
+doctors_admin_evaluation:
+    path:     /evaluations
+    defaults: { _controller: DoctorsAdminBundle:Evaluation:evaluations }
+
+doctors_admin_editEvaluation:
+    path:     /editEvaluation/{id}
+    defaults: { _controller: DoctorsAdminBundle:Evaluation:editEvaluation }
+
+
+doctors_admin_deleteEvaluation:
+    path:     /deleteEvaluation/{id}
+    defaults: { _controller: DoctorsAdminBundle:Evaluation:deleteEvaluation }
+
+
+doctors_admin_confirmEvaluation:
+    path:    /confirmEvaluation/{id}
+    defaults: { _controller: DoctorsAdminBundle:Evaluation:confirmEvaluation }
+
+
+doctors_admin_unconfirmEvaluation:
+    path:    /unconfirmEvaluation/{id}
+    defaults: { _controller: DoctorsAdminBundle:Evaluation:unconfirmEvaluation }
+
+#End Routes of users-----------------------------------------------------------------------------------
+
+
+
+# Start Routes of appointments------------------------------------------------------------------------
+doctors_admin_appointment:
+    path:     /appointments
+    defaults: { _controller: DoctorsAdminBundle:Appointment:appointments }
+
+doctors_admin_showAppointment:
+    path:     /showAppointment/{id}
+    defaults: { _controller: DoctorsAdminBundle:Appointment:showAppointment }
+
+doctors_admin_addAppointment:
+    path:     /addAppointment
+    defaults: { _controller: DoctorsAdminBundle:Appointment:addAppointment }
+
+doctors_admin_editAppointment:
+    path:     /editAppointment/{id}
+    defaults: { _controller: DoctorsAdminBundle:Appointment:editAppointment }
+
+
+doctors_admin_deleteAppointment:
+    path:     /deleteAppointment/{id}
+    defaults: { _controller: DoctorsAdminBundle:Appointment:deleteAppointment }
+
+
+loadDataTimeDoctor:
+    path:    /loadDataHourWork
+    defaults: { _controller: DoctorsAdminBundle:Appointment:loadDataHourWork }
+
+# END Routes of appointment---------------------------------------------------------------------------
+
+
+
+
+# Start Routes of appointments------------------------------------------------------------------------
+doctorSpeciality_index:
+    path:     /specialities
+    defaults: { _controller: "DoctorsAdminBundle:Speciality:indexSpeciality" }
+    methods:  GET
+
+doctorSpeciality_show:
+    path:     /{id}/showSpeciality
+    defaults: { _controller: "DoctorsAdminBundle:Speciality:showSpeciality" }
+    methods:  GET
+
+doctorSpeciality_new:
+    path:     /newSpeciality
+    defaults: { _controller: "DoctorsAdminBundle:Speciality:newSpeciality" }
+    methods:  [GET, POST]
+
+doctorSpeciality_edit:
+    path:     /{id}/editSpeciality
+    defaults: { _controller: "DoctorsAdminBundle:Speciality:editSpeciality" }
+    methods:  [GET, POST]
+
+doctorSpeciality_delete:
+    path:     /{id}/deleteSpeciality
+    defaults: { _controller: "DoctorsAdminBundle:Speciality:deleteSpeciality" }
+
+# END Routes of appointment---------------------------------------------------------------------------
+

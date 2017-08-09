@@ -1,0 +1,51 @@
+{% extends "::layoutAdmin.html.twig" %}
+{% block body %}
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title arabe">اضافة اختصاص</h4></div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <div class="white-box">
+                    <h1 class="arabe">تعديل الاختصاص</h1>
+
+                    {{ form_start(edit_form) }}
+                    <div class="form-group">
+                        {{ form_label(edit_form.nameSpeciality, "الاختصاص", {'label_attr': {'class':'control-label arabe'}}) }}
+                        {{ form_errors(edit_form.nameSpeciality) }}
+                        {{ form_widget(edit_form.nameSpeciality, {'attr' : {'class':'form-control arabe'}}) }}
+                    </div>
+                    <input type="submit" value="تعديل الاختصاص" class="btn btn-primary btn-lg arabe" />
+                    {{ form_end(edit_form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('datatable/js/jquery.metisMenu.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery.blockUI.js') }}"></script>
+
+    <!--Functions Js-->
+    <script src="{{ asset('datatable/js/functions.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/loader.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/jszip.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/pdfmake.min.js') }}"></script>
+    {#<script src="{{ asset('datatable/js/vfs_fonts.js') }}"></script>#}
+    <script src="{{ asset('datatable/js/buttons.html5.js') }}"></script>
+    <script src="{{ asset('datatable/js/buttons.colVis.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables-script.js') }}"></script>
+    <script src="{{ asset('plugins/bower_components/bootstrap-rtl-master/dist/js/bootstrap-rtl.min.js') }}"></script>
+{% endblock %}

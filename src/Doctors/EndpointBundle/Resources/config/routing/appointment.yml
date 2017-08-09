@@ -1,0 +1,66 @@
+
+loadDataTimeAppointment:
+    path:    load_hour_work
+    defaults: { _controller: DoctorsEndpointBundle:AppointmentApi:loadDataHourWork }
+    methods: [POST]
+
+add_api_appointment:
+    path:    add_appointment
+    defaults: { _controller: DoctorsEndpointBundle:AppointmentApi:addappointment }
+    methods: [POST]
+
+appointment_api_update_status:
+    path:    update_status_appointment/{appointment_id}
+    defaults: { _controller: "DoctorsEndpointBundle:AppointmentApi:api_update_status_appointment" }
+    methods: [POST]
+
+appointment_api_listConfirmed:
+    path:    list_appointment_confirmed
+    defaults: { _controller: "DoctorsEndpointBundle:AppointmentApi:api_appointment_list_confirmed" }
+    methods:  [POST]
+
+appointment_api_list_appointment_by_doctor:
+    path:    list_appointment_by_doctor/{doctor_id}
+    defaults: { _controller: "DoctorsEndpointBundle:AppointmentApi:api_get_appointment_by_doctor" }
+    methods:  [GET]
+
+appointment_api_list_appointment_by_user:
+    path:    list_appointment_by_user/{user_id}
+    defaults: { _controller: "DoctorsEndpointBundle:AppointmentApi:api_get_appointment_by_user" }
+    methods:  [GET]
+
+appointment_api_send_notification:
+    path:    send_notification
+    defaults: { _controller: "DoctorsEndpointBundle:AppointmentApi:sendNotificationAppointment" }
+    methods:  [GET]
+
+appointment_api_get_notification:
+    path:    get_notification
+    defaults: { _controller: "DoctorsEndpointBundle:AppointmentApi:api_notificationList" }
+    methods:  [POST]
+
+appointment_api_update_notification:
+    path:    update_notification
+    defaults: { _controller: "DoctorsEndpointBundle:AppointmentApi:api_update_notificationList" }
+    methods:  [POST]
+
+#appointment_api_send_test_notification:
+ #   path:    send_test_notif
+  #  defaults: { _controller: "DoctorsEndpointBundle:AppointmentApi:testNotif" }
+   # methods:  [POST]
+
+appointment_api_delete:
+    path:     api_delete_appointment/{appointment_id}
+    defaults: { _controller: "DoctorsEndpointBundle:AppointmentApi:api_delete_appointment" }
+    methods:  [DELETE]
+
+appointment_cornJobs:
+    path:     api_send_notification_corn_jobs
+    defaults: { _controller: "DoctorsEndpointBundle:AppointmentApi:api_send_notification_corn_jobs" }
+
+appointment_cornJobs_recall_notification:
+    path:     api_send_recall_notification_corn_jobs
+    defaults: { _controller: "DoctorsEndpointBundle:AppointmentApi:cornJobsNotificationRecall" }
+    
+
+    

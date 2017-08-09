@@ -1,0 +1,123 @@
+<?php
+
+namespace Doctors\AdminBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * User
+ *
+ * @ORM\Table(name="user")
+ * @ORM\Entity(repositoryClass="Doctors\AdminBundle\Repository\UserRepository")
+ */
+class User
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="phone_number", type="integer", unique=true)
+     */
+    private $phoneNumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=255)
+     */
+    private $password;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="isActive", type="boolean")
+     */
+    private $isActive;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="code", type="integer")
+     */
+    private $code;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="verified", type="boolean")
+     */
+    private $verified;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="country", type="string", length=255, nullable=true)
+     */
+    private $country;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="town", type="string", length=255, nullable=true)
+     */
+    private $town;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="city", type="string", length=255, nullable=true)
+     */
+    private $city;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo", type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="This file is not a valid image")
+     * @Assert\File(mimeTypes={"image/jpeg", "image/png", "image/gif", "image/jpg"})
+     */
+    private $photo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, unique=true, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="createdAt", type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="lastLogin", type="datetime", nullable=true)
+     */
+    private $lastLogin;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Doctors\AdminBundle\Entity\Evaluation", mappedBy="user")
+     */
+    private $evaluations;
+}

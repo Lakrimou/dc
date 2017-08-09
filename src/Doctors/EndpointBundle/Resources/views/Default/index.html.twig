@@ -1,0 +1,695 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>تطبيق الاطباء</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="apple-touch-icon" href="{{ asset('frontend/images/apple-touch-icon.png') }}">
+        <link rel="shortcut icon" type="image/ico" href="{{ asset('frontend/images/favicon.ico') }}" />
+        <!-- Plugin-CSS -->
+        <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/magnific-popup.css') }}">
+        <!-- Main-Stylesheets -->
+        <link rel="stylesheet" href="{{ asset('frontend/css/space.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/theme.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/overright.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
+        <script src="{{ asset('frontend/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+        <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <style>
+            .subscrie-form .btn ,.subscrie-form .form-control
+            {
+                border-radius: 0px 0 0 0px !important;
+            }
+            .owl-carousel
+            {
+                direction: ltr;
+            }
+            body{
+                font-family: 'DroidArabicKufiRegular'; 
+                    font-size: 15px;
+            }
+            .media-left, .media > .pull-right {
+                padding-left: 20px;
+            }
+            .media-right, .media > .pull-right {
+                padding-right:20px;
+            }
+            
+            p { 
+               font-family: 'DroidArabicKufiRegular'; 
+               font-weight: normal; 
+               font-style: normal; 
+               font-size: 14px;
+            }
+            
+            .btn-info
+            {
+            background-color: #3a5a97;
+            border-color: #3a5a97;
+            }
+            .btn-info:hover
+            {
+            background-color: #487bdd;
+            border-color: #487bdd;
+            }
+        </style>
+    </head>
+    <body data-spy="scroll" data-target="#mainmenu" data-offset="50">
+    <div class="preloade">
+        <span><i class="ti-mobile"></i></span>
+    </div>
+        <!--Header-Area-->
+        <header class="blue-bg relative fix" id="home">
+            <div class="section-bg overlay-bg "></div>
+            <!--Mainmenu-->
+            <nav class="navbar navbar-default mainmenu-area navbar-fixed-top" data-spy="affix" data-offset-top="60" >
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" data-toggle="collapse" class="navbar-toggle" data-target="#mainmenu">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-brand">
+                            <!--<img src="images/logo.png" alt="">-->
+                            <h2 class="text-white logo-text"  style="float:left">الاطباء</h2>
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-left" id="mainmenu" >
+                        <ul class="nav navbar-nav">
+                            <li><a href="#home">الصفحة الرئيسية</a></li>
+                            <li><a href="#work">عن التطبيق</a></li>
+                            <li><a href="#feature">الميزات</a></li>
+                            <li><a href="#client">آراء العملاء</a></li>
+                            <li><a href="#contact">إتصل بنا </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!--Mainmenu/-->
+            <div class="space-100"></div>
+            <div class="space-20 hidden-xs"></div>
+            <!--Header-Text-->
+            <div class="section-bg overlay-bg">
+                <img src="{{ asset('frontend/images/footer-bg.jpg') }}" alt="">
+            </div>
+            <div class="container text-white">
+                <div class="row">
+                    <div class="col-xs-12 col-md-8 col-lg-8">
+                        <div class="space-100"></div>
+                        <h1 class="aligncenter text-uppercase ">ماهو  تطبيق  الاطباء</h1>
+                        <div class="space-10"></div>
+                        <p style="font-size: 16px;">هناك حقيقة مثبتةنموذج عن النث. على مدى السنين ظهرت نوريم إيبسوم، أحياناً عن طريق الصدفة، وأحياناً عن عمد كإدخال بعض العبارات الفكاهية إليها.</p>
+                        <div class="space-100"></div>
+                       <div class="row text-white wow fadeInUp" style="">
+                            <div class="col-xs-6 col-sm-6 col-lg-5 text-right">
+                                <a href="#" class="alignright">
+                                    <img src="{{ asset('frontend/images/image/App_Store.png') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-lg-5 text-right">
+                                <a href="#" class="alignright">
+                                    <img src="{{ asset('frontend/images/image/Google_Play.png') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="space-50"></div>
+                    </div>
+                    <div class="hidden-xs hidden-sm hidden-md col-lg-4">
+                        <div class="home_screen_slide">
+                            <div class="single_screen_slide wow fadeInRight">
+                                <div class="item"><img src="{{ asset('frontend/images/image/screen1.jpg') }}" alt=""></div>
+                                <div class="item"><img src="{{ asset('frontend/images/image/screen2.jpg') }}" alt=""></div>
+                                <div class="item"><img src="{{ asset('frontend/images/image/screen3.jpg') }}" alt=""></div>
+                                <div class="item"><img src="{{ asset('frontend/images/image/screen4.jpg') }}" alt=""></div>
+                                <div class="item"><img src="{{ asset('frontend/images/image/screen5.jpg') }}" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="home_screen_nav">
+                            <span class="ti-arrow-left testi_prev"></span>
+                            <span class="ti-arrow-right testi_next"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-80"></div>
+            </div>
+            </div>
+            <!--Header-Text/-->
+        </header>
+        <!--Header-Area/-->
+        <!--Work-Section-->
+        <section class="" id="work">
+            <div class="space-80"></div>
+            <div class="container">
+                <div class="row wow fadeInUp">
+                    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
+                        <h3 class="text-uppercase">ماهو  تطبيق  الاطباء</h3>
+                        <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى للنص أو شكل توضع الفقرات في الصفحة </p>
+                    </div>
+                </div>
+                <div class="space-60"></div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="hover-shadow">
+                            <div class="space-60">
+                                <img src="{{ asset('frontend/images/icon/icon1.png') }}" alt="">
+                            </div>
+                            <div class="space-20"></div>
+                            <h5 class="text-uppercase">ما هو تطبيق الاطباء</h5>
+                            <p>قة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ.</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="hover-shadow">
+                            <div class="space-60">
+                                <img src="{{ asset('frontend/images/icon/icon2.png') }}" alt="">
+                            </div>
+                            <div class="space-20"></div>
+                            <h5 class="text-uppercase">ما هو تطبيق دكتور</h5>
+                            <p> حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القا</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="hover-shadow">
+                            <div class="space-60">
+                                <img src="{{ asset('frontend/images/icon/icon3.png') }}" alt="">
+                            </div>
+                            <div class="space-20"></div>
+                            <h5 class="text-uppercase">ما هو تطبيق دكتور</h5>
+                            <p>ك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="hover-shadow">
+                            <div class="space-60">
+                                <img src="{{ asset('frontend/images/icon/icon4.png') }}" alt="">
+                            </div>
+                            <div class="space-20"></div>
+                            <h5 class="text-uppercase">ما هو تطبيق دكتور</h5>
+                            <p>ك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-60"></div>
+            </div>
+        </section>
+        <!--Work-Section/-->
+        <!--Feature-Section-->
+        <section class="fix gray-bg"  dir="ltr">
+            <div class="space-60"></div>
+            <div class="container" id="feature">
+                <div class="space-100"></div>
+                <div class="row wow fadeInUp">
+                    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
+                        <h3 class="text-uppercase">ما هو تطبيق دكتور</h3>
+                        <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل </p>
+                    </div>
+                </div>
+                <div class="space-60"></div>
+                <div class="row feature-area">
+                    <div class="col-xs-12 col-sm-6 col-md-4 wow fadeInLeft">
+                        <div class="space-30"></div>
+                        <a href="#feature1" data-toggle="tab">
+                            <div class="media single-feature">
+                                <div class="media-body text-right">
+                                    <h5 >ما هو تطبيق دكتور</h5>
+                                    <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ </p>
+                                </div>
+                                <div class="media-left">
+                                    <div class="border-icon">
+                                        <span class="ti-light-bulb"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="space-30"></div>
+                        <a href="#feature2" data-toggle="tab">
+                            <div class="media single-feature">
+                                <div class="media-body text-right">
+                                    <h5>ما هو تطبيق دكتور</h5>
+                                    <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ </p>
+                                </div>
+                                <div class="media-left">
+                                    <div class="border-icon">
+                                        <span class="ti-cup"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="space-30"></div>
+                        <a href="#feature3" data-toggle="tab">
+                            <div class="media single-feature">
+                                <div class="media-body text-right">
+                                    <h5>ما هو تطبيق دكتور</h5>
+                                    <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء </p>
+                                </div>
+                                <div class="media-left">
+                                    <div class="border-icon">
+                                        <span class="ti-comments"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="space-30"></div>
+                    </div>
+                    <div class="hidden-xs hidden-sm col-md-4 text-center fix wow fadeIn">
+                        <div class="down-offset relative ">
+                            <img src="{{ asset('frontend/images/mobile2.png') }}" alt="">
+                            <div class="screen_image tab-content">
+                                <div id="feature1" class="tab-pane fade in active">
+                                    <img src="{{ asset('frontend/images/image/mobile/screen1.jpg') }}" alt="">
+                                </div>
+                                <div id="feature2" class="tab-pane fade">
+                                    <img src="{{ asset('frontend/images/image/mobile/screen2.jpg') }}" alt="">
+                                </div>
+                                <div id="feature3" class="tab-pane fade">
+                                    <img src="{{ asset('frontend/images/image/mobile/screen3.jpg') }}" alt="">
+                                </div>
+                                <div id="feature4" class="tab-pane fade">
+                                    <img src="{{ asset('frontend/images/image/mobile/screen4.jpg') }}" alt="">
+                                </div>
+                                <div id="feature5" class="tab-pane fade">
+                                    <img src="{{ asset('frontend/images/image/mobile/screen5.jpg') }}" alt="">
+                                </div>
+                                <div id="feature6" class="tab-pane fade">
+                                    <img src="{{ asset('frontend/images/image/mobile/screen5.jpg') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 wow fadeInRight">
+                        <div class="space-30"></div>
+                        <a href="#feature4" data-toggle="tab">
+                            <div class="media single-feature">
+                                <div class="media-right">
+                                    <div class="border-icon">
+                                        <span class="ti-eye"></span>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 style="text-align: right;">ما هو تطبيق دكتور</h5>
+                                    <p style="text-align: right;">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ </p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="space-30"></div>
+                        <a href="#feature5" data-toggle="tab">
+                            <div class="media single-feature">
+                                <div class="media-right">
+                                    <div class="border-icon">
+                                        <span class="ti-shine"></span>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 style="text-align: right;">ما هو تطبيق دكتور</h5>
+                                    <p style="text-align: right;">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="space-30"></div>
+                        <a href="#feature6" data-toggle="tab">
+                            <div class="media single-feature">
+                                <div class="media-right">
+                                    <div class="border-icon">
+                                        <span class="ti-layout-slider"></span>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 style="text-align: right;" >ما هو تطبيق دكتور</h5>
+                                    <p style="text-align: right;">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div><div class="space-100"></div>
+            </div>
+        </section>
+        <!--Feature-Section-->
+        <!--Video-Section-->
+        <section class="section-video relative fix">
+            <div class="section-bg overlay-bg alpha">
+            </div>
+            <div class="ivideo" id="cvideo" >
+                <img src="{{ asset('frontend/images/medical1.jpg') }}" alt="">
+            </div>
+            <div class="section-video-text text-center">
+            <a href="https://www.youtube.com/watch?v=iaj8ktgL3BY" class="btn video-popup video-button">
+            <span class="ti-control-play"></span>
+            </a>
+            </div>
+        </section>
+        <!--Video-Section/-->
+        <!--Screenshot-Section-->
+        <section id="screenshot" class="gray-bg">
+            <div class="space-80"></div>
+            <div class="container">
+                <div class="row wow fadeInUp">
+                    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
+                        <h3 class="text-uppercase">الشاشات</h3>
+                        <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ .</p>
+                    </div>
+                </div>
+                <div class="space-60"></div>
+                <div class="row wow fadeIn" style="direction: ltr;">
+                    <div class="col-xs-12">
+                        <div class="space-60"></div>
+                        <div class="list_screen_slide">
+                            <div class="item">
+                                <a href="{{ asset('frontend/images/image/mobilee/screen1.jpg') }}" class="work-popup">
+                                    <img src="{{ asset('frontend/images/image/mobilee/screen1.jpg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="{{ asset('frontend/images/image/mobilee/screen2.jpg') }}" class="work-popup">
+                                    <img src="{{ asset('frontend/images/image/mobilee/screen2.jpg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="{{ asset('frontend/images/image/mobilee/screen3.jpg') }}" class="work-popup">
+                                    <img src="{{ asset('frontend/images/image/mobilee/screen3.jpg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="{{ asset('frontend/images/image/mobilee/screen4.jpg') }}" class="work-popup">
+                                    <img src="{{ asset('frontend/images/image/mobilee/screen4.jpg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="{{ asset('frontend/images/image/mobilee/screen5.jpg') }}" class="work-popup">
+                                    <img src="{{ asset('frontend/images/image/mobilee/screen5.jpg') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="space-40"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="space-80"></div>
+        </section>
+        <!--Screenshot-Section/-->
+        <!--Client-Section-->
+        <section id="client">
+            <div class="space-80"></div>
+            <div class="container">
+                <div class="row wow fadeInUp">
+                    <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+                        <div class="well well-lg">
+                            <div class="client-details-content">
+                                <div class="client_details">
+                                    <div class="item">
+                                        <h3 style="color: #3a5a97;">اراء العملاء</h3>
+                                        <p>ايمن</p>
+                                        <q>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم</q>
+                                    </div>
+                                    <div class="item">
+                                        <h3>اراء العملاء</h3>
+                                        <p>اديب</p>
+                                        <q>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم</q>
+                                    </div>
+                                    <div class="item">
+                                        <h3>اراء العملاء</h3>
+                                        <p>سمير</p>
+                                        <q>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم</q>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-40"></div>
+                <div class="row wow fix fadeInUp">
+                    <div class="col-xs-12 col-md-6 col-md-offset-3 relative">
+                        <div class="client-photo-list">
+                            <div class="client_photo">
+                                <div class="item">
+                                    <div class="box100">
+                                        <img src="{{ asset('frontend/images/client/client1.png') }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="box100">
+                                        <img src="{{ asset('frontend/images/client/client2.png') }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="box100">
+                                        <img src="{{ asset('frontend/images/client/client3.png') }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client_nav">
+                            <span class="ti-angle-left testi_prev"></span>
+                            <span class="ti-angle-right testi_next"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="space-80"></div>
+        </section>
+        <!--Download-Section-->
+        <section class="relative fix">
+            <div class="space-80"></div>
+            <div class="section-bg overlay-bg">
+                <img src="{{ asset('frontend/images/medical1.jpg') }}" alt="">
+            </div>
+            <div class="container">
+                <div class="row wow fadeInUp justify-content-md-center">
+                    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center text-white">
+                        <h3>حمل التطبيق الآن و استفد من المميزات</h3>
+                    </div>
+                </div>
+                <div class="space-60"></div>
+                <div class="row text-white wow fadeInUp">
+                    <div class="col-xs-6 col-lg-6 col-sm-6 col-md-6 text-left">
+                        <a href="#">
+                            <img src="{{ asset('frontend/images/image/Google_Play.png') }}">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-lg-6 col-sm-6 col-md-6 text-right" >    
+                        <a href="#">
+                            <img src="{{ asset('frontend/images/image/App_Store.png') }}">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="space-80"></div>
+        </section>
+        <!--Download-Section/-->
+        <!--Map-->
+        <div id="contact"></div>
+        <!--Map/-->
+        <!--Footer-area-->
+        <footer class="black-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-top">
+                        <div class="col-xs-12 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="well well-lg" style="min-height: 518px;">
+                                <h3>اتصل بنا</h3>
+                                <div class="space-20"></div>
+                                   <style>
+                                        .bootstrap-growl
+                                        {
+                                            background-color: green;
+                                                color: #3c763d;
+                                                background-color: #dff0d8;
+                                                border-color: #d6e9c6;
+                                                padding: 15px;
+                                                margin-bottom: 20px;
+                                                border: 1px solid transparent;
+                                                border-radius: 4px;
+                                                z-index: 1000;
+                                                background-position: 15px 50%;
+                                                }
+                                        </style>
+                                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+						        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+						        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.js"></script>
+						                                      {% for flashMessage in app.session.flashbag.get('msg') %}
+                                            <script type="text/javascript">
+                                                        $(function() {
+                                            			
+                                            						 $.bootstrapGrowl("{{ flashMessage }}", { type: 'success' });
+                                            					
+                                                        });	
+                                            </script>
+                                     {% endfor %}      
+
+                                     <script type="text/javascript">
+                                     	 $.bootstrapGrowl('This is a basic growl! Quick and simple');
+                                     </script>                            
+                                <form action="{{url('endpoint_contact')}}"  method="POST">
+                                  <input type="hidden" name="_token" value="">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label for="form-name" class="sr-only">الاسم</label>
+                                                <input type="text" class="form-control" id="form-name" name="name" placeholder="الاسم" required>
+                                            </div>
+                                            <div class="space-10"></div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label for="form-email" class="sr-only">البريد الالكتروني</label>
+                                                <input type="email" class="form-control" id="form-email" name="mail" placeholder="البريد الالكتروني" required>
+                                            </div>
+                                            <div class="space-10"></div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="form-subject" class="sr-only">الموضوع</label>
+                                                <input type="text" class="form-control" id="form-subject" name="objet" placeholder="الموضوع" required>
+                                            </div>
+                                            <div class="space-10"></div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="form-message" class="sr-only"></label>
+                                                <textarea class="form-control" rows="6" id="form-message" name="message" placeholder="الرسالة" required></textarea>
+                                            </div>
+                                            <div class="space-10"></div>
+                                            <button class="btn btn-link no-round text-uppercase" type="submit">إرسال رسالة</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="well well-lg" style="min-height: 518px;">
+                                <h3>معلومات التواصل</h3>
+                                <div class="space-20"></div>
+                                <div class="space-25"></div>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="border-icon sm"><span class="ti-mobile"></span></div>
+                                            </td>
+                                            <td><a href="">0015 501 989 626 +</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="border-icon sm"><span class="ti-email"></span></div>
+                                            </td>
+                                            <td>
+                                                <a href="">mail@gmail.com</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="border-icon sm"><span class="ti-location-pin"></span></div>
+                                            </td>
+                                            <td>
+                                                <address>28 الدولة المدينة</address>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             <div class="space-80"></div>
+                <div class="row text-white wow fadeInUp">
+                    <div class="col-xs-12 col-md-6 col-md-offset-3">
+                        <h3 class="text-center">قم بالاشتراك ضمن قائمتنا ليصلك كل جديد</h3>
+                        <div class="space-15"></div>
+                        <form  class="subscrie-form"  id="email-form" method="post">
+                            <label class="mt10" for="mc-email"></label>
+                            <div class="input-group">
+                                <input type="email" id="email" class="form-control" name="email" placeholder="قم بوضع بريدك الالكتروني هنا">
+                                <div class="input-group-btn">
+                                    <button type="button" id="btn-sub" class="btn btn-info btn-sub" name="ok">الاشتراك</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="space-80"></div>
+                <div class="row text-white wow fadeIn">
+                    <div class="col-xs-12 text-center">
+                        <div class="social-menu">
+                            <a href="#"><span class="ti-facebook"></span></a>
+                            <a href="#"><span class="ti-twitter-alt"></span></a>
+                            <a href="#"><span class="ti-linkedin"></span></a>
+                            <a href="#"><span class="ti-pinterest-alt"></span></a>
+                        </div>
+                        <div class="space-20"></div>
+                        <p>جميع الحقوق محفوظة</p>
+                    </div>
+                </div>
+                <div class="space-20"></div>
+            </div>
+        </footer>
+        <!--Footer-area-->
+        <!--Vendor JS-->
+        <script src="{{ asset('frontend/js/vendor/jquery-1.12.4.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/vendor/bootstrap.min.js') }}"></script>
+        <!--Plugin JS-->
+        <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/scrollUp.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/ripples-min.js') }}"></script>
+        <script src="{{ asset('frontend/js/contact-form.js') }}"></script>
+        <script src="{{ asset('frontend/js/spectragram.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/ajaxchimp.js') }}"></script>
+        <script src="{{ asset('frontend/js/wow.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/plugins.js') }}"></script>
+        <!--Active JS-->
+        <style>
+        
+        </style>
+        <script src="{{ asset('frontend/js/main.js') }}"></script>
+    <script>
+        $("#btn-sub").click(function () {
+            //alert("je suis là");
+            var bol = true;
+            var reg = new RegExp('^[a-z0-9]+([_|\.|-]{1}[a-z0-9]+)*@[a-z0-9]+([_|\.|-]{1}[a-z0-9]+)*[\.]{1}[a-z]{2,6}$', 'i');
+
+            var email = $("#email").val();
+            if (email == "")
+            {
+                $("#email").css({'border-color': '#DB1702'});
+                bol = false;
+            }
+            if (email != "")
+            {
+                console.log(email);
+                if (reg.test(email) == false)
+                {
+                    $("#email").css({'border-color': '#DB1702'});
+                    bol = false;
+                } else
+                {
+                    $("#email").css({'border-color': '#3A9D23'});
+                    bol = true;
+                }
+
+            }
+            if (bol == true) {
+                var fromData = {email: $("#email").val()};
+                $.post("{{ path('add_emails') }}", fromData, function (data) {
+                    $("#email").val("");
+                    alert("تم تسجيل البريد بنجاح");
+                });
+            }
+
+
+        });
+    </script>
+
+    </body>
+</html>

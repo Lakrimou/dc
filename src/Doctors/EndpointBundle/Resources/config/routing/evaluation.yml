@@ -1,0 +1,24 @@
+evaluation_api_add:
+    path:     add_evaluation
+    defaults: { _controller: "DoctorsEndpointBundle:EvaluationApi:addEvaluation" }
+    methods:  [POST]
+
+evaluation_api_doctors:
+    path:     get_evaluation_doctor/{id_doctor}
+    defaults: { _controller: "DoctorsEndpointBundle:EvaluationApi:api_list_evaluationByDoctor" }
+    methods:  [GET]
+
+evaluation_api_users:
+    path:     get_evaluation_user/{id_user}
+    defaults: { _controller: "DoctorsEndpointBundle:EvaluationApi:api_list_evaluationByUser" }
+    methods:  [GET]
+
+evaluation_api_update:
+    path:     evaluation_update_api/{evaluation_id}
+    defaults: { _controller: "DoctorsEndpointBundle:EvaluationApi:api_edit_evaluation" }
+    methods:  [POST]
+
+api_evaluation_delete:
+    path:     /delete_evaluation_api/{evaluation_id}
+    defaults: { _controller: "DoctorsEndpointBundle:EvaluationApi:api_delete_evaluation" }
+    methods:  [DELETE]

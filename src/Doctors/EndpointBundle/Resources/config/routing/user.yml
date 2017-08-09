@@ -1,0 +1,56 @@
+user_api_add:
+    path:     user_api_add
+    defaults: { _controller: "DoctorsEndpointBundle:UserApi:api_register_user" }
+    methods:  [POST]
+
+user_api_verify:
+    path:     user_verify_api/{id}
+    defaults: { _controller: "DoctorsEndpointBundle:UserApi:verify" }
+    methods:  [POST]
+
+user_api_profile_complete:
+    path:     user_profile_complete_api/{id}
+    defaults: { _controller: "DoctorsEndpointBundle:UserApi:profile_complete" }
+    methods:  [POST]
+
+user_api_show_profile:
+    path:     user_show_profile_api/{id}
+    defaults: { _controller: "DoctorsEndpointBundle:UserApi:show_profile_user" }
+    methods:  [GET]
+
+# not yet for test
+user_api_edit_user:
+    path:     edit_user_api/{id}
+    defaults: { _controller: "DoctorsEndpointBundle:UserApi:api_edit_user" }
+    methods:  [POST]
+#---------------------------
+
+user_api_reset_password:
+    path:     user_reset_password_api
+    defaults: { _controller: "DoctorsEndpointBundle:UserApi:reset" }
+    methods:  [POST]
+
+user_api_login:
+    path:     user_login_api
+    defaults: { _controller: "DoctorsEndpointBundle:UserApi:login" }
+    methods:  [POST]
+
+user_api_update_picture:
+    path:     user_update_picture_api/{id}
+    defaults: { _controller: "DoctorsEndpointBundle:UserApi:updatePicture" }
+    methods:  [POST]
+
+user_api_add_picture:
+    path:     user_add_picture_api/{id}
+    defaults: { _controller: "DoctorsEndpointBundle:UserApi:addPicture" }
+    methods:  [POST]
+
+user_api_delete:
+    path:     api_delete_user/{user_id}
+    defaults: { _controller: "DoctorsEndpointBundle:UserApi:api_delete_user" }
+    methods:  [DELETE]
+
+user_api_add_token:
+    path:     add_user_token
+    defaults: { _controller: "DoctorsEndpointBundle:UserApi:api_add_token_user" }
+    methods:  [POST]

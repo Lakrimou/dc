@@ -1,0 +1,68 @@
+doctor_api_listDoctors:
+    path:    list_doctors
+    defaults: { _controller: "DoctorsEndpointBundle:DoctorApi:api_doctor_list" }
+    methods:  [GET]
+
+doctor_api_listDoctorsSpeciality:
+    path:    list_doctor_speciality/{id}
+    defaults: { _controller: "DoctorsEndpointBundle:DoctorApi:api_doctor_listDoctor_Speciality" }
+    methods:  [GET]
+
+doctor_api_profile_doctor:
+    path:    /profile_doctor/{id}
+    defaults: { _controller: "DoctorsEndpointBundle:DoctorApi:showDoctorProfile" }
+    methods:  [GET]
+
+doctor_api_profile_complete:
+    path:     doctor_profile_complete_api/{id}
+    defaults: { _controller: "DoctorsEndpointBundle:DoctorApi:profile_completeDoctor" }
+    methods:  [POST]
+
+doctor_api_search:
+    path:    search_doctor
+    defaults:    { _controller: "DoctorsEndpointBundle:DoctorApi:searchDoctor" }
+    methods:    [POST]
+
+doctor_api_distance:
+    path:     doctor_distance
+    defaults: { _controller: "DoctorsEndpointBundle:DoctorApi:calculDistance" }
+    methods:  [POST]
+
+doctor_api_update:
+    path:     doctor_update_api/{id}
+    defaults: { _controller: "DoctorsEndpointBundle:DoctorApi:api_edit_doctor" }
+    methods:  [POST]
+
+doctor_api_reset_password:
+    path:     doctor_reset_password_api
+    defaults: { _controller: "DoctorsEndpointBundle:DoctorApi:api_reset" }
+    methods:  [POST]
+
+api_login:
+    path:     login_api
+    defaults: { _controller: "DoctorsEndpointBundle:DoctorApi:api_login" }
+    methods:  [POST]
+
+api_update_picture:
+    path:     doctor_update_picture_api/{id}
+    defaults: { _controller: "DoctorsEndpointBundle:DoctorApi:updateDoctorPicture" }
+    methods:  [POST]
+
+api_add_picture:
+    path:     doctor_add_picture_api/{id}
+    defaults: { _controller: "DoctorsEndpointBundle:DoctorApi:addDoctorPicture" }
+    methods:  [POST]
+
+doctor_api_delete:
+    path:     api_delete_doctor/{doctor_id}
+    defaults: { _controller: "DoctorsEndpointBundle:DoctorApi:api_delete_doctor" }
+    methods:  [DELETE]
+
+doctor_api_add_token:
+    path:     add_doctor_token
+    defaults: { _controller: "DoctorsEndpointBundle:DoctorApi:api_add_token_doctor" }
+    methods:  [POST]
+
+
+
+

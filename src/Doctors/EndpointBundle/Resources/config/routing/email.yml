@@ -1,0 +1,15 @@
+delete_email:
+    path:     email/delete/{id}
+    defaults: { _controller: "DoctorsAdminBundle:Email:delete" }
+    
+add_emails:
+    path:     add_email
+    defaults: { _controller: "DoctorsAdminBundle:Email:addEmail" }
+    
+#politic_front:
+ #   path:     policy
+  #  defaults: { _controller: "DoctorsAdminBundle:Front:politic" }
+    
+#condition_front:
+ #   path:     conditions
+  #  defaults: { _controller: "DoctorsAdminBundle:Front:condition" }

@@ -1,0 +1,84 @@
+{% extends "::layoutAdmin.html.twig" %}
+{% block body %}
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title arabe"> تعديل التقييم</h4></div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <div class="white-box">
+                    <div class="arabe text-center alert-info alert">
+                                {{ " اليوم : " ~ evaluation.appointment.appointment|date('d/m/Y') ~  " الساعة : " ~ evaluation.appointment.appointment|date('H') ~ " و : " ~ evaluation.appointment.appointment|date('i') ~ " دقيقة | الطبيب : " ~ evaluation.doctor.nameDoctor ~ "  | المستخدم :  " ~ evaluation.user.name }}
+
+                    </div>
+                    {{ form_start(edit_form) }}
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.evaluation, "التقييم", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.evaluation) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.evaluation, {'attr': {'class': 'arabe form-control'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.feedback, "تعليق", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.feedback) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.feedback, {'attr': {'class': 'arabe form-control'}}) }}
+                    </div>
+                    {#<div class="form-group">
+                        #}{# Génération du label. #}{#
+                        {{ form_label(edit_form.appointment, "appointment", {'label_attr': {'class': 'arabe control-label '}}) }}
+
+                        #}{# Affichage des erreurs pour ce champ précis. #}{#
+                        {{ form_errors(edit_form.appointment) }}
+                        #}{# Génération de l'input. #}{#
+                        {{ form_widget(edit_form.appointment, {'attr': {'class': 'arabe form-control appointment'}}) }}
+                    </div>#}
+                    {#<div class="form-group">
+                        #}{# Génération du label. #}{#
+                        {{ form_label(edit_form.doctor, "الطبيب", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        #}{# Affichage des erreurs pour ce champ précis. #}{#
+                        {{ form_errors(edit_form.doctor) }}
+                        #}{# Génération de l'input. #}{#
+                        {{ form_widget(edit_form.doctor, {'attr': {'class': 'form-control arabe'}}) }}
+                    </div>#}
+                    <input type="submit" value="تعديل التقييم" class="  arabe btn btn-primary btn-lg" />
+                    {{ form_end(edit_form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('datatable/js/jquery.metisMenu.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery.blockUI.js') }}"></script>
+
+    <!--Functions Js-->
+    <script src="{{ asset('datatable/js/functions.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/loader.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/jszip.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/pdfmake.min.js') }}"></script>
+    {#<script src="{{ asset('datatable/js/vfs_fonts.js') }}"></script>#}
+    <script src="{{ asset('datatable/js/buttons.html5.js') }}"></script>
+    <script src="{{ asset('datatable/js/buttons.colVis.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables-script.js') }}"></script>
+    <script src="{{ asset('plugins/bower_components/bootstrap-rtl-master/dist/js/bootstrap-rtl.min.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,21 @@
+
+speciality_api_add:
+    path:     speciality_api_add
+    defaults: { _controller: "DoctorsEndpointBundle:SpecialityApi:api_register_speciality" }
+    methods:  [POST]
+
+speciality_api_edit:
+    path:     edit_speciality_api/{id}
+    defaults: { _controller: "DoctorsEndpointBundle:SpecialityApi:api_edit_speciality" }
+    methods:  [POST]
+
+speciality_api_list:
+    path:    list_speciality
+    defaults: { _controller: "DoctorsEndpointBundle:SpecialityApi:api_list_Speciality" }
+    methods:  [GET]
+
+
+speciality_api_delete:
+    path:     api_delete_speciality/{speciality_id}
+    defaults: { _controller: "DoctorsEndpointBundle:SpecialityApi:api_delete_speciality" }
+    methods:  [DELETE]

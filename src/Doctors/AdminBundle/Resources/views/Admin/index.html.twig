@@ -1,0 +1,628 @@
+{% extends "::layoutAdmin.html.twig" %}
+{% block stylesh %}
+    <style>
+        #chartdiv, #chartdivv {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="wrapper">
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title arabe">لوحة التحكم</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="white-box">
+                            <div class="r-icon-stats"><i class="fa fa-4x fa-user-md "></i>
+                                <div class="bodystate">
+                                    <h4>{{ doctorNumbers }}</h4> <span class="text-muted arabe">الأطباء</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="white-box">
+                            <div class="r-icon-stats"><i class="fa fa-4x fa-users" aria-hidden="true"></i>
+                                <div class="bodystate">
+                                    <h4>{{ userNumbers }}</h4> <span class="text-muted arabe">المستخدمين</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="white-box">
+                            <div class="r-icon-stats"><i class="fa fa-4x fa-calendar" aria-hidden="true"></i>
+
+                                <div class="bodystate">
+                                    <h4>{{ appointmentNumbers }}</h4> <span class="text-muted arabe">المواعيد</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="white-box">
+                            <div class="r-icon-stats"><i class="fa fa-4x fa-comments" aria-hidden="true"></i>
+                                <div class="bodystate">
+                                    <h4>{{ evaluationNumbers }}</h4> <span class="text-muted arabe">التقييمات</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-xs-12">
+                                <div class="white-box">
+                                    <div id="container_barStats"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-xs-12">
+                                <div class="white-box">
+                                    <div id="container_barStatss"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--row -->
+                <div class="row">
+
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 white-box">
+
+                        <div class="col-md-5">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    اخر المواعيد المطلوبة
+                                </div>
+                                <table class="arabe table table-striped table-hover table-responsive table-bordered">
+                                    <tr>
+                                        <th>اخر المواعيد المطلوبة</th>
+                                        <th>الطبيب</th>
+                                        <th>المستخدم</th>
+                                    </tr>
+                                    {% for appointment in lastAppointments %}
+                                        <tr>
+                                            <td>{{ appointment.appointment|date('Y-m-d H:i:s') }}</td>
+                                            <td>{{ appointment.doctor.nameDoctor }}</td>
+                                            <td>{{ appointment.user.name }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    اخر المستخدمين
+                                </div>
+                                <table class="arabe table table-striped table-hover table-responsive table-bordered">
+                                    <tr>
+                                        <th>اخر المستخدمين</th>
+                                        <th>أرقام التواصل</th>
+
+                                        {% for user in lastUsers %}
+                                    <tr>
+                                        <td>{{ user.name }}</td>
+                                        <td>{{ user.phoneNumber }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    اخر التقييمات
+                                </div>
+                                <table class="arabe table table-striped table-hover table-responsive table-bordered">
+                                    <tr>
+                                        <th>اخر التقييمات</th>
+                                        <th>المستخدم</th>
+                                        <th>الطبيب</th>
+
+                                        {% for evaluation in lastEvaluations %}
+                                    <tr>
+                                        <td>{{ evaluation.evaluation }}</td>
+                                        <td>{{ evaluation.user.name }}</td>
+                                        <td>{{ evaluation.doctor.nameDoctor }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="height: 280px;">
+                        <div id="placeholder" class="demo-placeholder"></div>
+                    </div>
+
+                </div>
+                <!-- row -->
+                <!-- /.row -->
+                <!-- .right-sidebar -->
+                <div class="right-sidebar">
+                    <div class="slimscrollright">
+                        <div class="rpanel-title"> Service Panel <span><i
+                                        class="ti-close right-side-toggle"></i></span></div>
+                        <div class="r-panel-body">
+                            <ul>
+                                <li><b>Layout Options</b></li>
+                                <li>
+                                    <div class="checkbox checkbox-info">
+                                        <input id="checkbox1" type="checkbox" class="fxhdr">
+                                        <label for="checkbox1"> Fix Header </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox checkbox-warning">
+                                        <input id="checkbox2" type="checkbox" class="fxsdr">
+                                        <label for="checkbox2"> Fix Sidebar </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox4" type="checkbox" class="open-close">
+                                        <label for="checkbox4"> Toggle Sidebar </label>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul id="themecolors" class="m-t-20">
+                                <li><b>With Light sidebar</b></li>
+                                <li><a href="javascript:void(0)" theme="default" class="default-theme">1</a></li>
+                                <li><a href="javascript:void(0)" theme="green" class="green-theme">2</a></li>
+                                <li><a href="javascript:void(0)" theme="gray" class="yellow-theme">3</a></li>
+                                <li><a href="javascript:void(0)" theme="blue" class="blue-theme working">4</a></li>
+                                <li><a href="javascript:void(0)" theme="purple" class="purple-theme">5</a></li>
+                                <li><a href="javascript:void(0)" theme="megna" class="megna-theme">6</a></li>
+                                <li><b>With Dark sidebar</b></li>
+                                <br/>
+                                <li><a href="javascript:void(0)" theme="default-dark"
+                                       class="default-dark-theme">7</a></li>
+                                <li><a href="javascript:void(0)" theme="green-dark" class="green-dark-theme">8</a>
+                                </li>
+                                <li><a href="javascript:void(0)" theme="gray-dark" class="yellow-dark-theme">9</a>
+                                </li>
+
+                                <li><a href="javascript:void(0)" theme="blue-dark" class="blue-dark-theme">10</a>
+                                </li>
+                                <li><a href="javascript:void(0)" theme="purple-dark"
+                                       class="purple-dark-theme">11</a></li>
+                                <li><a href="javascript:void(0)" theme="megna-dark" class="megna-dark-theme">12</a>
+                                </li>
+                            </ul>
+                            <ul class="m-t-20 chatonline">
+                                <li><b>Chat option</b></li>
+                                <li><a href="javascript:void(0)"><img
+                                                src="{{ asset('plugins/images/users/varun.jpg') }}"
+                                                alt="user-img" class="img-circle"> <span>Varun Dhavan <small
+                                                    class="text-success">online</small></span></a></li>
+                                <li><a href="javascript:void(0)"><img
+                                                src="{{ asset('plugins/images/users/genu.jpg') }}"
+                                                alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small
+                                                    class="text-warning">Away</small></span></a></li>
+                                <li><a href="javascript:void(0)"><img
+                                                src="{{ asset('plugins/images/users/ritesh.jpg') }}"
+                                                alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small
+                                                    class="text-danger">Busy</small></span></a></li>
+                                <li><a href="javascript:void(0)"><img
+                                                src="{{ asset('plugins/images/users/arijit.jpg') }}"
+                                                alt="user-img" class="img-circle"> <span>Arijit Sinh <small
+                                                    class="text-muted">Offline</small></span></a></li>
+                                <li><a href="javascript:void(0)"><img
+                                                src="{{ asset('plugins/images/users/govinda.jpg') }}"
+                                                alt="user-img" class="img-circle"> <span>Govinda Star <small
+                                                    class="text-success">online</small></span></a></li>
+                                <li><a href="javascript:void(0)"><img
+                                                src="{{ asset('plugins/images/users/hritik.jpg') }}"
+                                                alt="user-img" class="img-circle"> <span>John Abraham<small
+                                                    class="text-success">online</small></span></a></li>
+                                <li><a href="javascript:void(0)"><img
+                                                src="{{ asset('plugins/images/users/john.jpg') }}"
+                                                alt="user-img" class="img-circle"> <span>Hritik Roshan<small
+                                                    class="text-success">online</small></span></a></li>
+                                <li><a href="javascript:void(0)"><img
+                                                src="{{ asset('plugins/images/users/pawandeep.jpg') }}"
+                                                alt="user-img" class="img-circle"> <span>Pwandeep rajan <small
+                                                    class="text-success">online</small></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.right-sidebar -->
+            </div>
+            <!-- /.container-fluid -->
+            {% block footer %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('datatable/js/jquery.metisMenu.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery.blockUI.js') }}"></script>
+
+    <!--Functions Js-->
+    <script src="{{ asset('datatable/js/functions.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/loader.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/jszip.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/pdfmake.min.js') }}"></script>
+    {#<script src="{{ asset('datatable/js/vfs_fonts.js') }}"></script>#}
+    <script src="{{ asset('datatable/js/buttons.html5.js') }}"></script>
+    <script src="{{ asset('datatable/js/buttons.colVis.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables-script.js') }}"></script>
+    <script src="{{ asset('plugins/bower_components/bootstrap-rtl-master/dist/js/bootstrap-rtl.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script>
+        var chart = new Highcharts.Chart({
+
+            chart: {
+                renderTo: 'container_barStats',
+                type: 'column',
+                style: {
+                    fontFamily: 'Droid Arabic Kufi, serif'
+                }
+            },
+
+            xAxis: {
+                categories: [
+                    'المواعيد المؤكدة',
+                    'المواعيد المنتهية',
+                    'المواعيد المعلقة',
+                    'المواعيد المرفوضة',
+                ],
+                reversed: true,
+                title:{
+                    style: {
+                        fontFamily: 'Droid Arabic Kufi, serif'
+                    }
+                }
+            },
+
+            yAxis: {
+                title: {
+                    text: 'عدد المواعيد',
+                    useHTML: Highcharts.hasBidiBug,
+                    style: {
+                        fontFamily: 'Droid Arabic Kufi, serif'
+                    }
+                },
+                opposite: true
+            },
+
+            title: {
+                text: 'احصائيات  حالات المواعيد',
+                useHTML: Highcharts.hasBidiBug,
+                style: {
+                    fontFamily: 'Droid Arabic Kufi, serif'
+                }
+            },
+
+            legend: {
+                useHTML: Highcharts.hasBidiBug,
+                style: {
+                    fontFamily: 'Droid Arabic Kufi, serif'
+                }
+            },
+
+            tooltip: {
+                useHTML: true,
+                style: {
+                    fontFamily: 'Droid Arabic Kufi, serif'
+                }
+            },
+
+            series: [{
+                showInLegend: false,
+                name: '',
+                data: [{{ appointmentConfirmedNumbers }},{{ appointmentExceededNumbers }},{{ appointmentWaintingNumbers }},{{ appointmnentUnconfirmedNumbers }}]
+            }]
+
+        });
+
+    </script>
+    <script>
+        var chart = new Highcharts.Chart({
+
+            chart: {
+                renderTo: 'container_barStatss',
+                type: 'column',
+                style: {
+                    fontFamily: 'Droid Arabic Kufi, serif'
+                }
+            },
+
+            xAxis: {
+                categories: [
+                    {% for speciality,value in doctorsSpecialities %}
+
+                        "{{ speciality }}",
+
+
+                    {% endfor %}
+
+                ],
+                reversed: true
+            },
+
+            yAxis: {
+                title: {
+                    text: 'عدد الأطباء',
+                    useHTML: Highcharts.hasBidiBug,
+                    style: {
+                        fontFamily: 'Droid Arabic Kufi, serif'
+                    }
+                },
+                opposite: true
+            },
+
+            title: {
+                text: 'احصائيات  الأطباء حسب الاختصاص',
+                useHTML: Highcharts.hasBidiBug,
+                style: {
+                    fontFamily: 'Droid Arabic Kufi, serif'
+                }
+            },
+
+            legend: {
+                useHTML: Highcharts.hasBidiBug,
+                style: {
+                    fontFamily: 'Droid Arabic Kufi, serif'
+                }
+            },
+
+            tooltip: {
+                useHTML: true,
+                style: {
+                    fontFamily: 'Droid Arabic Kufi, serif'
+                }
+            },
+
+            series: [{
+                showInLegend: false,
+                name: '',
+                data: [{% for speciality,value in doctorsSpecialities %}
+                    {{ value }},
+                    {% endfor %}]
+            }]
+
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            // Build the chart
+            Highcharts.chart('container', {
+                chart: {
+                    renderTo: 'container',
+                    type: 'column'
+                },
+                title: {
+                    text: 'الاحصائيات التي تخص المواعيد',
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'DroidKufiRegular, Verdana, sans-serif'
+                    }
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                xAxis: {
+                    reversed:true
+                },
+                yAxis: {
+                    opposite:true
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            style: {
+                                fontSize: '7px',
+                                fontFamily: 'DroidKufiRegular, Verdana, sans-serif'
+                            },
+                        },
+                        showInLegend: true
+                    }
+                },
+                series: [{
+                    name: 'النسبة',
+                    colorByPoint: true,
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'DroidKufiRegular, Verdana, sans-serif'
+                    },
+                    data: [{
+                        name: 'المواعيد المؤكدة',
+                        y: {{ confirmedPercentAppointment }},
+                    }, {
+                        name: 'المواعيد المنتهية',
+                        y: {{ exceededPercentAppointment }},
+                        sliced: true,
+                        selected: true
+                    }, {
+                        name: 'المواعيد المعلقة',
+                        y: {{ waitingPercentAppointment }}
+                    }, {
+                        name: 'المواعيد المرفوضة',
+                        y: {{ unconfirmedPercentAppointment }},
+                    },
+                    ]
+                }]
+            });
+        });
+    </script>
+    <script>
+        Highcharts.chart('container_barStaats', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'الاحصائيات التي تخص المواعيد',
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'DroidKufiRegular, Verdana, sans-serif'
+                }
+            },
+            subtitle: {
+                text: 'التصنيف حسب الحالة'
+            },
+            xAxis: {
+                type: 'category',
+                labels: {
+                    rotation: -45,
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'DroidKufiRegular, Verdana, sans-serif '
+                    }
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'عدد المواعيد'
+                },
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'DroidKufiRegular, Verdana, sans-serif'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: 'العدد'
+            },
+            series: [{
+                name: 'المواعيد',
+                data: [
+                    ['المؤكدة', {{ appointmentConfirmedNumbers }}],
+                    ['المرفوضة', {{ appointmnentUnconfirmedNumbers }}],
+                    ['المعلقة', {{ appointmentWaintingNumbers }}],
+                    ['المنتهية', {{ appointmentExceededNumbers }}],
+                    /*
+                     ['Mexico City', 8.9],
+                     ['Lima', 8.9]*/
+                ],
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'right',
+                    format: '{point.y:.1f}', // one decimal
+                    y: 10, // 10 pixels down from the top
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'DroidKufiRegular, Verdana, sans-serif'
+                    }
+                }
+            }]
+        });
+    </script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all"/>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+    <!-- Chart code -->
+    <script>
+
+        var chart = AmCharts.makeChart("chartdiv", {
+            "theme": "light",
+            "type": "serial",
+            "dataProvider": [
+                {% for speciality,value in doctorsSpecialities %}
+                {
+                    "country": "{{ speciality }}",
+                    "visits": "{{ value }}",
+                    "color": "FCD202"
+                },
+                {% endfor %}
+            ],
+            "valueAxes": [{
+                "position": "right",
+                "gridColor": "#FFFFFF",
+                "title": "عدد الاطباء",
+                "gridAlpha": 0.5,
+                "dashLength": 0
+            }],
+            "gridAboveGraphs": true,
+            "startDuration": 1,
+            "graphs": [{
+                "balloonText": "[[category]]: <b>[[value]]</b>",
+                "fillAlphas": 0.8,
+                "lineAlpha": 0.2,
+                "type": "column",
+                "valueField": "visits"
+            }],
+            "chartCursor": {
+                "categoryBalloonEnabled": false,
+                "cursorAlpha": 0,
+                "zoomable": false
+            },
+            "categoryField": "country",
+            "categoryAxis": {
+                "gridPosition": "start",
+                "gridAlpha": 0,
+                "tickPosition": "start",
+                "tickLength": 20
+            },
+            "export": {
+                "enabled": true
+            }
+
+
+        }, 0);
+    </script>
+    <script>
+        var chart = AmCharts.makeChart("chartdivv", {
+            "type": "pie",
+            "theme": "light",
+            "dataProvider": [{
+                "country": "المواعيد المعلقة",
+                "value": {{ appointmentWaintingNumbers }}
+            }, {
+                "country": "المواعيد المنتهية",
+                "value": {{ appointmentExceededNumbers }}
+            }, {
+                "country": "المواعيد المرفوضة",
+                "value": {{ appointmnentUnconfirmedNumbers }}
+            }, {
+                "country": "المواعيد المؤكدة",
+                "value": {{ appointmentConfirmedNumbers }}
+            }],
+            "valueField": "value",
+            "titleField": "country",
+            "outlineAlpha": 0.4,
+            "depth3D": 15,
+            "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+            "angle": 30,
+            "export": {
+                "enabled": true
+            }
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,363 @@
+{% extends "::layoutAdmin.html.twig" %}
+{% block stylesh %}
+
+    {#<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">#}
+    {#<link href="{{ asset('bootstrap-datetimepicker-master/build/css/bootstrap-datetimepicker-standalone.css') }}" rel="stylesheet">#}
+    {#<link rel="stylesheet" href="{{ asset('js/jquery-ui-1.12.1.custom/jquery-ui.min.css') }}" rel="stylesheet">#}
+    {#<link rel="stylesheet" type="text/css" href="{{ asset('datetimepicker-master/jquery.datetimepicker.css') }}"/>#}
+    {# <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" rel="stylesheet">#}
+    <link rel="stylesheet" href="{{ asset('js/jquery-ui-1.12.1.custom/jquery-ui.min.css') }}"
+{% endblock %}
+{% block body %}
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title arabe"> تعديل موعد</h4></div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <div class="white-box">
+                    {{ form_start(edit_form) }}
+                    {#<div class="form-group">
+                        #}{# Génération du label. #}{#
+                        {{ form_label(form.appointment, "التاريخ المرجو للموعد", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        #}{# Affichage des erreurs pour ce champ précis. #}{#
+                        {{ form_errors(form.appointment) }}
+                        #}{# Génération de l'input. #}{#
+                        <input value="" id="datetimepicker" type="text">
+                        {{ form_widget(form.appointment, {'attr': {'id': 'datetimepicker arabe'}}) }}
+                    </div>#}
+                    {#<div class="form-group">
+                        <div class='input-group date' id='datetimepicker'>
+                            {{ form_label(form.appointment, null, { 'label_attr': {'class': 'control-label arabe'} }) }}{{ form_errors(form.appointment) }}
+                            {{ form_widget(form.appointment, {'attr': {'class': 'form-control datetimepicker'}}) }}
+                            <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                        </div>
+                    </div>#}
+                    {#<div class="form-group">
+                        #}{# Génération du label. #}{#
+                        {{ form_label(edit_form.doctor, "الطبيب", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        #}{# Affichage des erreurs pour ce champ précis. #}{#
+                        {{ form_errors(edit_form.doctor) }}
+                        #}{# Génération de l'input. #}{#
+                        {{ form_widget(edit_form.doctor, {'attr': {'class': 'arabe form-control doctor_select'}}) }}
+                    </div>
+                    <div class="form-group user_select">
+                        #}{# Génération du label. #}{#
+                        {{ form_label(edit_form.user, "المستخدم", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        #}{# Affichage des erreurs pour ce champ précis. #}{#
+                        {{ form_errors(edit_form.user) }}
+                        #}{# Génération de l'input. #}{#
+                        {{ form_widget(edit_form.user, {'attr': {'class': 'arabe form-control user_select'}}) }}
+                    </div>
+                    <div class="form-group">
+                        <label for="datetimepicker" class="control-label arabe">تاريخ الموعد المرجو</label>
+                        <input type="text" value="" id="datepicker"
+                               name="doctors_adminbundle_appointment[appointment]" class="arabe form-control"/>
+                    </div>#}
+                    {#<div class="text-center loading">
+                        <img src="{{ asset('uploads/load.gif') }}" alt="loading" id="loading"/>#}
+                        {#{% if (doctor is not defined) %}
+                            <p>i'm here</p>
+                        {% else %}
+                            {{ doctor.startTimeWork|date('h:i') }}
+                        {% endif %}#}
+
+                    {#</div>
+                    <div class="form-group">
+                        <label class="control-label arabe">حجز موعد</label>
+                        <select name="dateAppt" id="mySelect">
+
+                        </select>
+                    </div>#}
+                    {#
+                    <!-- code datetimepicker calendar for date and time -->
+                    <div class="form-group">
+                        <div class="input-group date" id="datetimepicker1">
+                            #}{# Génération du label. #}{#
+                            {{ form_label(form.appointment, "التاريخ المرجو للموعد", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                            #}{# Affichage des erreurs pour ce champ précis. #}{#
+                            {{ form_errors(form.appointment) }}
+                            #}{# Génération de l'input. #}{#
+                            {{ form_widget(form.appointment, {'attr': {'class': 'arabe form-control'}}) }}
+                            <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>#}
+                    <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(edit_form.status, "الحالة", {'label_attr': {'class': 'arabe control-label'}}) }}
+
+                        {# Affichage des erreurs pour ce champ précis. #}
+                        {{ form_errors(edit_form.status) }}
+                        {# Génération de l'input. #}
+                        {{ form_widget(edit_form.status, {'attr': {'class': 'arabe status_select form-control'}}) }}
+                    </div>
+                    <div class="form-group">
+                        <label class="input_reason_label contol-label">سبب الرفض</label>
+                        <textarea class="input_reason form-control arabe" name="unconfirmedReason">
+                            {% if appointment.reason is defined %}
+                                {{ appointment.reason }}
+                            {% endif %}
+                        </textarea>
+                    </div>
+                    <input type="submit" value="اضافة الموعد" class="arabe btn btn-primary btn-lg"/>
+                    {{ form_end(edit_form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('datatable/js/jquery.metisMenu.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery.blockUI.js') }}"></script>
+
+    <!--Functions Js-->
+    <script src="{{ asset('datatable/js/functions.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/loader.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/jszip.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/pdfmake.min.js') }}"></script>
+    {#<script src="{{ asset('datatable/js/vfs_fonts.js') }}"></script>#}
+    <script src="{{ asset('datatable/js/buttons.html5.js') }}"></script>
+    <script src="{{ asset('datatable/js/buttons.colVis.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables-script.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui-1.12.1.custom/datepicker-ar.js') }}"></script>
+    <script>
+        $(function () {
+            /*$("#datepicker").datepicker($.datepicker.regional["ar"]);*/
+            $("#datepicker").datepicker({
+                maxDate: "+30",
+            });
+            /*$("#locale").on("change", function () {
+             $("#datepicker").datepicker("option",
+             $.datepicker.regional[$(this).val()]);
+             });*/
+
+        });
+    </script>
+    <script>
+        var startWorkTime, endWorkTime, dateObject = new Date();
+        $('#datepicker').hide();
+        $('#loading').hide();
+        $('#mySelect').hide();
+        $('.user_select').hide();
+        var id_doctor;
+        $('.doctor_select').on('change', function () {
+            $('.user_select').show();
+            console.log('__________akrem________');
+            id_doctor = this.value;
+            console.log(id_doctor);
+        });
+        $('.user_select').on('change', function () {
+            $('#datepicker').show();
+            console.log('__________akrem________');
+            id_user = this.value;
+            console.log(id_user);
+        });
+        $("#datepicker").datepicker({
+            maxDate: +30,
+            onSelect: function () {
+                dateObject = $(this).datepicker('getDate');
+                dateObject = new Date(dateObject);
+                var month = dateObject.getMonth() + 1; //months from 1-12
+                var day = dateObject.getDate();
+                var year = dateObject.getFullYear();
+                if (month < 10) {
+                    month = '0' + month;
+                }
+                if (day < 10) {
+                    day = '0' + day;
+                }
+                newdate = year + "-" + month + "-" + day;
+                console.log(id_doctor);
+                console.log('newdate');
+                console.log(newdate);
+                $('#loading').show();
+                $('#mySelect').hide();
+                $.ajax({
+                    type: "POST",
+                    url: "{{ path('loadDataTimeDoctor') }}",
+                    data: {doctor_id: id_doctor, user_id: id_user, dateAppointment: newdate},
+                    dataType: "json",
+                    success: function (reponse) {
+                        /*console.log(reponse.date);*/
+                        console.log('success');
+                        $('#loading').hide();
+                        /*startWorkTime =  reponse.date[0];
+                         endWorkTime = reponse.date[reponse.length];
+                         $('div.loading').append('<h2>أوقات العمل</h2><p> وقت بداية الدوام  : ' + startWorkTime.getHours() + ' و ' + startWorkTime.getMinutes() + ' دقيقة</p>');
+                         $('div.loading').append('<br> وقت نهاية الدوام : ' + endWorkTime.getHours() + ' و ' + endWorkTime.getMinutes() + ' دقيقة</p>');
+                         $('div.loading').append('<br><h2>الأوقات المتاحة لحجز موعد</h2> <br>');*/
+                        $.each(reponse, function (i, item) {
+                            console.log(reponse[i].date);
+                            if (reponse[i].disponible == 0) {
+                                $('#mySelect').show();
+                                $('#mySelect').append(
+                                    '<option value='+ reponse[i].date +' disabled>'+
+                                    reponse[i].date.substring(11, 16),+
+                                        '</option>'
+                                );
+
+
+                                /*$('#mySelect option').attr('disabled','disabled');
+                                 $('#mySelect option').css('background-color','red');*/
+                            }else{
+                                $('#mySelect').show();
+                                $('#mySelect').append($('<option>', {
+                                    value: reponse[i].date,
+                                    text: reponse[i].date.substring(11, 16),
+                                }))
+                            }
+                        });
+                        console.log(reponse);
+
+
+                        /*startWorkTime = new Date(reponse.date);
+                         endWorkTime = new Date(reponse.endTimeWork.date);
+                         console.log('startWorkTime');
+                         console.log(startWorkTime);
+                         console.log('endWorkTime');
+                         console.log(endWorkTime);
+                         $('div.loading').empty();
+                         $('#loading').hide();
+                         console.log(reponse.date);*/
+                        /*$('div.loading').append('<h2>أوقات العمل</h2><p> وقت بداية الدوام  : ' + startWorkTime.getHours() + ' و ' + startWorkTime.getMinutes() + ' دقيقة</p>');
+                         $('div.loading').append('<br> وقت نهاية الدوام : ' + endWorkTime.getHours() + ' و ' + endWorkTime.getMinutes() + ' دقيقة</p>');
+                         $('div.loading').append('<br><h2>الأوقات المتاحة لحجز موعد</h2> <br>');*/
+                        /*var interval = "30";
+                         timeslots = [startWorkTime];
+                         while (startWorkTime != endWorkTime) {
+                         startWorkTime = addMinutes(startWorkTime, interval);
+                         /!*alert(timeslots);*!/
+                         if (startWorkTime == false) {
+                         $('#mySelect').show();
+                         timeslots.push(startWorkTime);
+                         return false;
+                         }
+                         timeslots.push(startWorkTime);
+                         console.log('------timeslot iiinn of while------');
+                         console.log(timeslots);
+                         $.each(timeslots, function (i, item) {
+                         itemHour = item.getHours();
+                         if (itemHour < 10) {
+                         itemHour = '0' + itemHour;
+                         }
+
+                         itemMinute = item.getMinutes();
+                         if (itemMinute < 10) {
+                         itemMinute = '0' + itemMinute;
+                         /!*minutes = parseInt(minutes);*!/
+                         }
+                         itemSecondes = item.getSeconds();
+                         if (itemSecondes < 10) {
+                         itemSecondes = '0' + itemSecondes;
+                         /!*minutes = parseInt(minutes);*!/
+                         }
+                         itemDate = itemHour + ':' + itemMinute + ':' + itemSecondes;
+                         console.log('-----item-----');
+                         console.log(item);
+                         $('#mySelect').append($('<option>', {
+                         value: item,
+                         text: itemDate
+                         }));
+                         });
+                         }
+                         console.log('------timeslot out of while------');
+                         console.log(timeslots);
+                         */
+                        /*console.log(reponse);*/
+                    },
+
+
+                    error: function (reponse) {
+                        console.log('erreur');
+                        console.log(reponse);
+
+
+                    }
+
+
+                });
+            }
+        });
+
+
+        /*$('#datepicker').datepicker({
+         onSelect : function() {
+         alert('aaaaaa');
+         var dateRDV = $('#datepicker').datepicker('getDate');
+         console.log('__________boussaha________');
+         }
+         });*/
+
+
+
+        /*var dateRDV = $('#datetimepicker3').val();*!/
+         console.log(dateRDV);
+         alert('__ok________');
+         $.ajax({
+         type: "POST",
+         url: "{{ path('loadDataTimeDoctor') }}",
+         data: {doctor_id: id_doctor, dateAppointment: dateRDV},
+         dataType: "json",
+         success: function (reponse) {
+         console.log(reponse);
+         alert(reponse);
+         },
+         error: function (reponse) {
+         console.log(reponse);
+         alert(reponse);
+
+         }
+         });*/
+
+
+    </script>
+    <script>
+        if ($('.status_select').val() !== "مرفوض") {
+            $('.input_reason_label').hide();
+            $('.input_reason').hide();
+        }
+        $('.status_select').on('change', function () {
+            var status = this.value;
+            if (status == "مرفوض") {
+                $('.input_reason_label').show();
+                $('.input_reason').show();
+            }
+            if (status == "مؤكد") {
+                $('.input_reason_label').hide();
+                $('.input_reason').hide();
+            }
+            if (status == "منته") {
+                $('.input_reason_label').hide();
+                $('.input_reason').hide();
+            }
+            if (status == "معلق") {
+                $('.input_reason_label').hide();
+                $('.input_reason').hide();
+            }
+        });
+    </script>
+    {#<script src="{{ asset('js/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>#}
+    {#<script src="{{ asset('js/arabic-date.js') }}"></script>#}
+    {#<script src="{{ asset('datetimepicker-master/build/jquery.datetimepicker.full.min.js') }}"></script>#}
+    <script src="{{ asset('plugins/bower_components/bootstrap-rtl-master/dist/js/bootstrap-rtl.min.js') }}"></script>
+
+{% endblock %}

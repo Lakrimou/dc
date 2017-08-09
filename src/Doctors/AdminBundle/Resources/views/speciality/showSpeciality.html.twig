@@ -1,0 +1,107 @@
+{% extends "::layoutAdmin.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    {#<link rel="stylesheet" href="{{ asset('bootstrap/dist/css/bootstrap.min.css') }}">#}
+    <!-- Integral core stylesheet -->
+    {#<link href="{{ asset('datatable/integral-core.css') }}" rel="stylesheet">#}
+    <!-- /integral core stylesheet -->
+
+    <!--Jvector Map-->
+    {#<link href="{{ asset('datatable/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet">#}
+
+    {#<link href="{{ asset('datatable/integral-forms.css') }}" rel="stylesheet">#}
+
+    <!-- Bootstrap RTL stylesheet min version -->
+    {# <link href="{{ asset('datatable/bootstrap-rtl.min.css') }}" rel="stylesheet">#}
+    <!-- /bootstrap rtl stylesheet min version -->
+
+    <!-- Integral RTL core stylesheet -->
+    {#<link href="{{ asset('datatable/integral-rtl-core.css') }}" rel="stylesheet">#}
+
+    {#<link href="{{ asset('datatable/integral-forms.css') }}" rel="stylesheet">#}
+    <link href="{{ asset('datatable/jquery.dataTables.css') }}" rel="stylesheet">
+    <link href="{{ asset('datatable/buttons.dataTables.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('datatable/select2.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('datatable/bootstrap-toggle.min.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <!-- /main header -->
+
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title arabe">البيانات التي تخص اختصاص "<strong>{{ speciality.nameSpeciality }}</strong>"</h4>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading clearfix">
+                            <h4 class="panel-title arabe">عرض البيانات</h4>
+                        </div>
+
+
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong>الاختصاص </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">
+                                                {{ speciality.nameSpeciality }}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 arabe">
+                                                <strong>تاريخ اضافة الاختصاص </strong>
+                                            </div>
+                                            <div class="col-lg-4 arabe">يوم
+                                                {{ speciality.createdAtSpeciality|date('d/m/Y') }} على الساعة {{ speciality.createdAtSpeciality|date('h:m') }}
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page-wrapper -->
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('datatable/js/jquery.metisMenu.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('datatable/js/jquery.blockUI.js') }}"></script>
+
+    <!--Functions Js-->
+    <script src="{{ asset('datatable/js/functions.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/loader.js') }}"></script>
+
+    <script src="{{ asset('datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/jszip.min.js') }}"></script>
+    <script src="{{ asset('datatable/js/pdfmake.min.js') }}"></script>
+    {#<script src="{{ asset('datatable/js/vfs_fonts.js') }}"></script>#}
+    <script src="{{ asset('datatable/js/buttons.html5.js') }}"></script>
+    <script src="{{ asset('datatable/js/buttons.colVis.js') }}"></script>
+    <script src="{{ asset('datatable/js/dataTables-script.js') }}"></script>
+    <script src="{{ asset('plugins/bower_components/bootstrap-rtl-master/dist/js/bootstrap-rtl.min.js') }}"></script>
+{% endblock %}
